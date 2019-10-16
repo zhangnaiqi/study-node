@@ -1,0 +1,331 @@
+{
+ "type": "INIT",
+ "payload": {
+  "total": 1854,
+  "error_info": "",
+  "start": 135,
+  "report": {
+   "qtype": "195",
+   "tags": "读书"
+  },
+  "count": 15,
+  "text": "javascript",
+  "items": [
+   {
+    "cover_url": "https://img9.doubanio.com/view/subject/l/public/s6484806.jpg",
+    "label_actions": [],
+    "interest": null,
+    "tpl_name": "search_subject",
+    "id": 6431095,
+    "extra_actions": [],
+    "topics": [],
+    "title": "网页开发手记 : HTML+CSS+JavaScript实战详解",
+    "labels": [],
+    "rating": {
+     "value": 0,
+     "rating_info": "评价人数不足",
+     "count": 0,
+     "star_count": 0
+    },
+    "abstract_2": "",
+    "url": "https://book.douban.com/subject/6431095/",
+    "abstract": "叶青 / 电子工业 / 2011-6 / 65.00元",
+    "more_url": "onclick=\"moreurl(this,{i:'135',query:'javascript',subject_id:'6431095',from:'book_subject_search',cat_id:'1001'})\""
+   },
+   {
+    "interest": null,
+    "topics": [],
+    "cover_url": "https://img1.doubanio.com/view/subject/l/public/s4280388.jpg",
+    "extra_actions": [],
+    "abstract_2": "",
+    "title": "JavaScript : The Complete Reference",
+    "rating": {
+     "star_count": 0,
+     "value": 0,
+     "rating_info": "目前无人评价",
+     "count": 0
+    },
+    "tpl_name": "search_subject",
+    "id": 1696703,
+    "abstract": "Thomas A. Powell / Fritz Schneider / McGraw-Hill/Osborne Media / 2001-09-20 / USD 49.99",
+    "more_url": "onclick=\"moreurl(this,{i:'136',query:'javascript',subject_id:'1696703',from:'book_subject_search',cat_id:'1001'})\"",
+    "url": "https://book.douban.com/subject/1696703/",
+    "label_actions": [],
+    "labels": []
+   },
+   {
+    "abstract_2": "",
+    "title": "Javascript",
+    "url": "https://book.douban.com/subject/2708751/",
+    "topics": [],
+    "label_actions": [],
+    "interest": null,
+    "cover_url": "https://img3.doubanio.com/f/shire/5522dd1f5b742d1e1394a17f44d590646b63871d/pics/book-default-lpic.gif",
+    "labels": [],
+    "abstract": "Pascarello, Eric / John Wiley & Sons Inc / 24.99",
+    "rating": {
+     "count": 0,
+     "star_count": 0,
+     "rating_info": "目前无人评价",
+     "value": 0
+    },
+    "more_url": "onclick=\"moreurl(this,{i:'137',query:'javascript',subject_id:'2708751',from:'book_subject_search',cat_id:'1001'})\"",
+    "tpl_name": "search_subject",
+    "id": 2708751,
+    "extra_actions": []
+   },
+   {
+    "topics": [],
+    "abstract_2": "",
+    "label_actions": [],
+    "interest": null,
+    "labels": [],
+    "title": "JavaScript : A Programmer's Companion from Basic through DHTML, CSS and DOM",
+    "abstract": "Koch, Stefan / 2003-6 / 506.00元",
+    "extra_actions": [],
+    "more_url": "onclick=\"moreurl(this,{i:'138',query:'javascript',subject_id:'7963387',from:'book_subject_search',cat_id:'1001'})\"",
+    "url": "https://book.douban.com/subject/7963387/",
+    "id": 7963387,
+    "tpl_name": "search_subject",
+    "rating": {
+     "rating_info": "目前无人评价",
+     "star_count": 0,
+     "count": 0,
+     "value": 0
+    },
+    "cover_url": "https://img3.doubanio.com/view/subject/l/public/s8011100.jpg"
+   },
+   {
+    "abstract_2": "",
+    "url": "https://book.douban.com/subject/19059644/",
+    "cover_url": "https://img1.doubanio.com/view/subject/l/public/s21871439.jpg",
+    "tpl_name": "search_subject",
+    "labels": [],
+    "interest": null,
+    "extra_actions": [],
+    "rating": {
+     "value": 0,
+     "count": 0,
+     "rating_info": "目前无人评价",
+     "star_count": 0
+    },
+    "id": 19059644,
+    "topics": [],
+    "label_actions": [],
+    "abstract": "Miller, Frederic P.; Vandome, Agnes F.; McBrewster, John",
+    "more_url": "onclick=\"moreurl(this,{i:'139',query:'javascript',subject_id:'19059644',from:'book_subject_search',cat_id:'1001'})\"",
+    "title": "JavaScript"
+   },
+   {
+    "label_actions": [],
+    "abstract_2": "",
+    "abstract": "Olivier Hondermarck / Micro Application Editions / 2012-6-1 / EUR 20.50",
+    "url": "https://book.douban.com/subject/22317058/",
+    "tpl_name": "search_subject",
+    "extra_actions": [],
+    "id": 22317058,
+    "topics": [],
+    "cover_url": "https://img3.doubanio.com/view/subject/l/public/s25968230.jpg",
+    "title": "JavaScript",
+    "interest": null,
+    "labels": [],
+    "rating": {
+     "count": 0,
+     "rating_info": "目前无人评价",
+     "value": 0,
+     "star_count": 0
+    },
+    "more_url": "onclick=\"moreurl(this,{i:'140',query:'javascript',subject_id:'22317058',from:'book_subject_search',cat_id:'1001'})\""
+   },
+   {
+    "interest": null,
+    "tpl_name": "search_subject",
+    "id": 14225601,
+    "cover_url": "https://img1.doubanio.com/view/subject/l/public/s15432269.jpg",
+    "more_url": "onclick=\"moreurl(this,{i:'141',query:'javascript',subject_id:'14225601',from:'book_subject_search',cat_id:'1001'})\"",
+    "title": "JavaScript",
+    "extra_actions": [],
+    "abstract": "Bucher Gruppe",
+    "label_actions": [],
+    "rating": {
+     "count": 0,
+     "value": 0,
+     "star_count": 0,
+     "rating_info": "目前无人评价"
+    },
+    "url": "https://book.douban.com/subject/14225601/",
+    "topics": [],
+    "labels": [],
+    "abstract_2": ""
+   },
+   {
+    "label_actions": [],
+    "labels": [],
+    "url": "https://book.douban.com/subject/14248262/",
+    "interest": null,
+    "abstract": "Livres Groupe",
+    "cover_url": "https://img9.doubanio.com/view/subject/l/public/s15455046.jpg",
+    "extra_actions": [],
+    "more_url": "onclick=\"moreurl(this,{i:'142',query:'javascript',subject_id:'14248262',from:'book_subject_search',cat_id:'1001'})\"",
+    "id": 14248262,
+    "rating": {
+     "value": 0,
+     "count": 0,
+     "star_count": 0,
+     "rating_info": "目前无人评价"
+    },
+    "title": "JavaScript",
+    "tpl_name": "search_subject",
+    "abstract_2": "",
+    "topics": []
+   },
+   {
+    "abstract": "Shelly, Gary B.; Cashman, Thomas J.; Dorin, William J. / 2000-8 / $ 126.50",
+    "more_url": "onclick=\"moreurl(this,{i:'143',query:'javascript',subject_id:'12391429',from:'book_subject_search',cat_id:'1001'})\"",
+    "url": "https://book.douban.com/subject/12391429/",
+    "id": 12391429,
+    "extra_actions": [],
+    "rating": {
+     "count": 0,
+     "value": 0,
+     "rating_info": "目前无人评价",
+     "star_count": 0
+    },
+    "topics": [],
+    "tpl_name": "search_subject",
+    "abstract_2": "",
+    "title": "JavaScript",
+    "label_actions": [],
+    "labels": [],
+    "interest": null,
+    "cover_url": "https://img1.doubanio.com/view/subject/l/public/s14471908.jpg"
+   },
+   {
+    "topics": [],
+    "url": "https://book.douban.com/subject/15147373/",
+    "abstract": "Fuente Wikipedia",
+    "rating": {
+     "star_count": 0,
+     "value": 0,
+     "rating_info": "目前无人评价",
+     "count": 0
+    },
+    "interest": null,
+    "more_url": "onclick=\"moreurl(this,{i:'144',query:'javascript',subject_id:'15147373',from:'book_subject_search',cat_id:'1001'})\"",
+    "cover_url": "https://img1.doubanio.com/view/subject/l/public/s17441139.jpg",
+    "extra_actions": [],
+    "label_actions": [],
+    "id": 15147373,
+    "labels": [],
+    "tpl_name": "search_subject",
+    "title": "JavaScript",
+    "abstract_2": ""
+   },
+   {
+    "more_url": "onclick=\"moreurl(this,{i:'145',query:'javascript',subject_id:'15297792',from:'book_subject_search',cat_id:'1001'})\"",
+    "topics": [],
+    "id": 15297792,
+    "interest": null,
+    "rating": {
+     "value": 0,
+     "rating_info": "目前无人评价",
+     "star_count": 0,
+     "count": 0
+    },
+    "abstract_2": "",
+    "url": "https://book.douban.com/subject/15297792/",
+    "tpl_name": "search_subject",
+    "labels": [],
+    "abstract": "Source Wikipedia",
+    "label_actions": [],
+    "extra_actions": [],
+    "cover_url": "https://img9.doubanio.com/view/subject/l/public/s17573596.jpg",
+    "title": "JavaScript"
+   },
+   {
+    "cover_url": "https://img1.doubanio.com/view/subject/l/public/s17587957.jpg",
+    "id": 15312863,
+    "title": "JavaScript",
+    "more_url": "onclick=\"moreurl(this,{i:'146',query:'javascript',subject_id:'15312863',from:'book_subject_search',cat_id:'1001'})\"",
+    "topics": [],
+    "labels": [],
+    "interest": null,
+    "extra_actions": [],
+    "rating": {
+     "star_count": 0,
+     "count": 0,
+     "rating_info": "目前无人评价",
+     "value": 0
+    },
+    "abstract_2": "",
+    "url": "https://book.douban.com/subject/15312863/",
+    "tpl_name": "search_subject",
+    "label_actions": [],
+    "abstract": "Quelle Wikipedia"
+   },
+   {
+    "extra_actions": [],
+    "labels": [],
+    "tpl_name": "search_subject",
+    "interest": null,
+    "rating": {
+     "star_count": 0,
+     "count": 0,
+     "value": 0,
+     "rating_info": "目前无人评价"
+    },
+    "title": "JavaScript",
+    "label_actions": [],
+    "abstract": "Sosu: Wikipedia",
+    "topics": [],
+    "cover_url": "https://img1.doubanio.com/view/subject/l/public/s17602578.jpg",
+    "id": 15329334,
+    "abstract_2": "",
+    "more_url": "onclick=\"moreurl(this,{i:'147',query:'javascript',subject_id:'15329334',from:'book_subject_search',cat_id:'1001'})\"",
+    "url": "https://book.douban.com/subject/15329334/"
+   },
+   {
+    "rating": {
+     "count": 0,
+     "value": 0,
+     "star_count": 0,
+     "rating_info": "目前无人评价"
+    },
+    "abstract_2": "",
+    "id": 15332816,
+    "tpl_name": "search_subject",
+    "abstract": "Istochnik Wikipedia",
+    "label_actions": [],
+    "more_url": "onclick=\"moreurl(this,{i:'148',query:'javascript',subject_id:'15332816',from:'book_subject_search',cat_id:'1001'})\"",
+    "labels": [],
+    "extra_actions": [],
+    "topics": [],
+    "cover_url": "https://img3.doubanio.com/view/subject/l/public/s17605954.jpg",
+    "url": "https://book.douban.com/subject/15332816/",
+    "interest": null,
+    "title": "JavaScript"
+   },
+   {
+    "label_actions": [],
+    "abstract": "Nathan Clark / CreateSpace Independent Publishing Platform / 2016-11-26 / USD 16.38",
+    "cover_url": "https://img3.doubanio.com/view/subject/l/public/s29401741.jpg",
+    "id": 26997294,
+    "abstract_2": "",
+    "interest": null,
+    "more_url": "onclick=\"moreurl(this,{i:'149',query:'javascript',subject_id:'26997294',from:'book_subject_search',cat_id:'1001'})\"",
+    "labels": [],
+    "title": "JavaScript : Programming Basics for Absolute Beginners",
+    "rating": {
+     "count": 0,
+     "rating_info": "目前无人评价",
+     "star_count": 0,
+     "value": 0
+    },
+    "tpl_name": "search_subject",
+    "url": "https://book.douban.com/subject/26997294/",
+    "topics": [],
+    "extra_actions": []
+   }
+  ]
+ }
+}

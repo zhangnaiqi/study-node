@@ -1,6 +1,6 @@
 const http = require("http");
 const https = require("https");
-const dexrpy = require("./douban-decrypt.js").decrypt;
+const dexrpy = require("./6-douban-decrypt.js").decrypt;
 const writeFilePromise = require("./fileutils").writeFilePromise;
 let bookArr = [];
 
@@ -34,7 +34,7 @@ let doubanPage = async page => {
           const bookList = dexrpy(str);
           // 存储当前页json
           const data = await writeFilePromise(
-            "douban.json",
+            "6-douban.json",
             JSON.stringify(bookList, null, " "),
             "utf-8"
           );
@@ -52,7 +52,7 @@ let doubanPage = async page => {
             doubanPage(page + 1);
           } else {
             const data1 = await writeFilePromise(
-              "doubanArr.js",
+              "6-doubanArr.js",
               JSON.stringify(bookArr, null, " "),
               "utf-8"
             );
