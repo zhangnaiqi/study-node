@@ -30,7 +30,7 @@ http.get("http://www.win4000.com/wallpaper_big_114591_11.html", res => {
           });
           console.log("imgs++++", imgs);
           const data1 = await writeFilePromise(
-            "imgsArr.js",
+            "6-imgsArr.js",
             JSON.stringify(imgs, null, " "),
             "utf-8"
           );
