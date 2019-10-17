@@ -32,7 +32,7 @@ let doubanPage = async page => {
           // console.log("str: ", str, "++++++++++++++++++");
           // 解密数据
           const bookList = dexrpy(str);
-          // 存储当前页json
+          // 存储当前页json,方便调试查看数据结构
           const data = await writeFilePromise(
             "6-douban.json",
             JSON.stringify(bookList, null, " "),
