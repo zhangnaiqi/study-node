@@ -7,13 +7,22 @@ function jsonToCsv(jsonList, targetPath, fileName) {
       prev.push(Object.keys(current));
     }
     // 将每个值都存到一个数组中去
+    // "======1234*n*4321***====="替换“\n”
+    // "======1234*comma*4321***====="替换英文逗号
     var dataList = [];
-    // console.log("current+++++++++", current);
     for (var key in current) {
-      dataList.push(current[key]);
+      if (key === "abstract") {
+        dataList.push(
+          current[key]
+            .toString()
+            .replace(/\n/g, "======1234*n*4321***=====")
+            .replace(/,/g, "======1234*comma*4321***=====")
+        );
+      } else {
+        dataList.push(current[key]);
+      }
     }
     prev.push(dataList);
-    // console.log("prev+++++++++", prev);
     return prev;
   }, []);
   // 将上一步得到的数组转为字符串

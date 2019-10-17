@@ -32,6 +32,7 @@ let doubanPage = async page => {
 
   //查找加密信息开始下标
   const idx = body.indexOf('__DATA__ = "');
+  if (idx === -1) return;
   console.log("idx: ", idx);
   //查找加密信息结束下标
   const idx2 = body.indexOf('";');
@@ -43,8 +44,6 @@ let doubanPage = async page => {
   //   console.log("bookList========", bookList);
   //遍历保存书名和其他信息
   for (let i = 0; i < bookList.payload.items.length; i++) {
-    // 为了避开这两本摘要不一样啊 https://book.douban.com/subject/2994925/和https://book.douban.com/subject/1869705/
-    // if (bookList.payload.items[i].rating && i != 2 && i != 15) {
     if (bookList.payload.items[i].rating) {
       const evaluateNumber = bookList.payload.items[i].rating.count,
         evaluatestar = bookList.payload.items[i].rating.star_count,
@@ -99,23 +98,23 @@ let doubanPage = async page => {
       JSON.stringify(bookArr, null, " "),
       "utf-8"
     );
-    //这种解析https://book.douban.com/subject/1869705/  摘要解析有问题
-    // jsonToCsv(bookArr, ".", "writeFile.csv");
+    //原生解析
+    jsonToCsv(bookArr, ".", "douban.csv");
 
-    //这个第三方库，还是不行
-    const fields = [
-      "title",
-      "abstract",
-      "evaluateNumber",
-      "evaluatestar",
-      "cover_url",
-      "author",
-      "press",
-      "pubDate"
-    ];
-    const json2csvParser = new Parser({ fields });
-    const csv = json2csvParser.parse(bookArr);
-    const data1 = await writeFilePromise(`douban.csv`, csv, "utf-8");
+    //这个第三方库
+    // const fields = [
+    //   "title",
+    //   "abstract",
+    //   "evaluateNumber",
+    //   "evaluatestar",
+    //   "cover_url",
+    //   "author",
+    //   "press",
+    //   "pubDate"
+    // ];
+    // const json2csvParser = new Parser({ fields });
+    // const csv = json2csvParser.parse(bookArr);
+    // const data1 = await writeFilePromise(`douban.csv`, csv, "utf-8");
   }
 };
 doubanPage(1);
