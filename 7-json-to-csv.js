@@ -6,21 +6,9 @@ function jsonToCsv(jsonList, targetPath, fileName) {
     if (index === 0) {
       prev.push(Object.keys(current));
     }
-    // 将每个值都存到一个数组中去
-    // "======1234*n*4321***====="替换“\n”
-    // "======1234*comma*4321***====="替换英文逗号
     var dataList = [];
     for (var key in current) {
-      if (key === "abstract") {
-        dataList.push(
-          current[key]
-            .toString()
-            .replace(/\n/g, "======1234*n*4321***=====")
-            .replace(/,/g, "======1234*comma*4321***=====")
-        );
-      } else {
-        dataList.push(current[key]);
-      }
+      dataList.push('"' + current[key] + '"');
     }
     prev.push(dataList);
     return prev;
