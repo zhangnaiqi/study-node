@@ -2,6 +2,7 @@ const https = require("https");
 const dexrpy = require("./6-douban-decrypt.js").decrypt;
 const writeFilePromise = require("./fileutils").writeFilePromise;
 const jsonToCsv = require("./7-json-to-csv").jsonToCsv;
+const { Parser } = require("json2csv");
 var cheerio = require("cheerio");
 let bookArr = [];
 
@@ -43,8 +44,8 @@ let doubanPage = async page => {
   //遍历保存书名和其他信息
   for (let i = 0; i < bookList.payload.items.length; i++) {
     // 为了避开这两本摘要不一样啊 https://book.douban.com/subject/2994925/和https://book.douban.com/subject/1869705/
-    if (bookList.payload.items[i].rating && i != 2 && i != 15) {
-      // if (bookList.payload.items[i].rating) {
+    // if (bookList.payload.items[i].rating && i != 2 && i != 15) {
+    if (bookList.payload.items[i].rating) {
       const evaluateNumber = bookList.payload.items[i].rating.count,
         evaluatestar = bookList.payload.items[i].rating.star_count,
         cover_url = bookList.payload.items[i].cover_url;
@@ -69,7 +70,7 @@ let doubanPage = async page => {
         const $abstractdom1 = $("div#link-report");
         $abstractdom1.find("p").each(function(index) {
           const des = $(this).text();
-          console.log("des++++++", des);
+          //   console.log("des++++++", des);
           abstract += des;
         });
       }
@@ -82,7 +83,7 @@ let doubanPage = async page => {
         author,
         press,
         pubDate,
-        abstract: abstract
+        abstract
       };
       bookArr.push(boolItem);
     }
@@ -93,13 +94,28 @@ let doubanPage = async page => {
     doubanPage(page + 1);
   } else {
     // console.log("bookArr++++++", bookArr);
-    const data1 = await writeFilePromise(
+    const data = await writeFilePromise(
       "6-doubanArr.js",
       JSON.stringify(bookArr, null, " "),
       "utf-8"
     );
     //这种解析https://book.douban.com/subject/2994925/和https://book.douban.com/subject/1869705/  摘要解析有问题
-    jsonToCsv(bookArr, ".", "writeFile.csv");
+    // jsonToCsv(bookArr, ".", "writeFile.csv");
+
+    //这个第三方库，还是不行
+    const fields = [
+      "title",
+      "abstract",
+      "evaluateNumber",
+      "evaluatestar",
+      "cover_url",
+      "author",
+      "press",
+      "pubDate"
+    ];
+    const json2csvParser = new Parser({ fields });
+    const csv = json2csvParser.parse(bookArr);
+    const data1 = await writeFilePromise(`douban.csv`, csv, "utf-8");
   }
 };
 doubanPage(1);
