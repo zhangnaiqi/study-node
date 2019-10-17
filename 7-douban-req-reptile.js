@@ -95,11 +95,11 @@ let doubanPage = async page => {
   } else {
     // console.log("bookArr++++++", bookArr);
     const data = await writeFilePromise(
-      "6-doubanArr.js",
+      "7-doubanArr.js",
       JSON.stringify(bookArr, null, " "),
       "utf-8"
     );
-    //这种解析https://book.douban.com/subject/2994925/和https://book.douban.com/subject/1869705/  摘要解析有问题
+    //这种解析https://book.douban.com/subject/1869705/  摘要解析有问题
     // jsonToCsv(bookArr, ".", "writeFile.csv");
 
     //这个第三方库，还是不行
