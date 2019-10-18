@@ -1,4 +1,5 @@
 const writeFilePromise = require("./fileutils").writeFilePromise;
+const fs = require("fs");
 function jsonToCsv(jsonList, targetPath, fileName) {
   // 这样我们得到了一个第一个为表头，剩余为内容的数组了
   var csvDataList = jsonList.reduce((prev, current, index) => {
@@ -22,10 +23,13 @@ function jsonToCsv(jsonList, targetPath, fileName) {
     })
     .join("\r\n");
   return new Promise(async (resolve, reject) => {
+    var msExcelBuffer = Buffer.concat([
+      new Buffer.from("\xEF\xBB\xBF", "binary"),
+      new Buffer.from(writeData)
+    ]);
     const data = await writeFilePromise(
       `${targetPath}/${fileName}`,
-      writeData,
-      "utf-8"
+      msExcelBuffer
     );
     console.log("data》》》》》》", data);
     if (data === true) {
