@@ -19,6 +19,10 @@ const httpsGet = url => {
 
         // console.log("body++++++", body);
       });
+      resa.on("error", err => {
+        // This prints the error message and stack trace to `stderr`.
+        console.log("请求错误+++++", err);
+      });
     });
     get_req.end();
   });

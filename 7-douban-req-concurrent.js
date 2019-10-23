@@ -2,7 +2,6 @@ const https = require("https");
 const dexrpy = require("./6-douban-decrypt.js").decrypt;
 const writeFilePromise = require("./fileutils").writeFilePromise;
 const jsonToCsv = require("./7-json-to-csv").jsonToCsv;
-const { Parser } = require("json2csv");
 var cheerio = require("cheerio");
 let bookArr = [];
 let urlArr = [];
@@ -25,38 +24,38 @@ const httpsGet = url => {
 };
 let doubanPage = async page => {
   console.log("page++++++++++++", page);
-  const promiseAll = Promise.all([
-    httpsGet(
-      "https://search.douban.com/book/subject_search?search_text=javascript&cat=1001&start=" +
-        (page - 1) * 15
-    ),
-    httpsGet(
-      "https://search.douban.com/book/subject_search?search_text=javascript&cat=1001&start=" +
-        (page - 1) * 15 +
-        1
-    ),
-    httpsGet(
-      "https://search.douban.com/book/subject_search?search_text=javascript&cat=1001&start=" +
-        (page - 1) * 15 +
-        2
-    ),
-    httpsGet(
-      "https://search.douban.com/book/subject_search?search_text=javascript&cat=1001&start=" +
-        (page - 1) * 15 +
-        3
-    ),
-    httpsGet(
-      "https://search.douban.com/book/subject_search?search_text=javascript&cat=1001&start=" +
-        (page - 1) * 15 +
-        4
-    )
-  ]);
-  const [page1, page2, page3, page4, page5] = await promiseAll;
-  await getData(page1);
-  await getData(page2);
-  await getData(page3);
-  await getData(page4);
-  await getData(page5);
+  try {
+    const promiseAll = Promise.all([
+      httpsGet(
+        "https://search.douban.com/book/subject_search?search_text=javascript&cat=1001&start=" +
+          page * 15
+      ),
+      httpsGet(
+        "https://search.douban.com/book/subject_search?search_text=javascript&cat=1001&start=" +
+          (page + 1) * 15
+      ),
+      httpsGet(
+        "https://search.douban.com/book/subject_search?search_text=javascript&cat=1001&start=" +
+          (page + 2) * 15
+      ),
+      httpsGet(
+        "https://search.douban.com/book/subject_search?search_text=javascript&cat=1001&start=" +
+          (page + 3) * 15
+      ),
+      httpsGet(
+        "https://search.douban.com/book/subject_search?search_text=javascript&cat=1001&start=" +
+          (page + 4) * 15
+      )
+    ]);
+    const [page1, page2, page3, page4, page5] = await promiseAll;
+    await getData(page1);
+    await getData(page2);
+    await getData(page3);
+    await getData(page4);
+    await getData(page5);
+  } catch (err) {
+    console.log("获取分页列表数据+++++++", err);
+  }
 };
 let getData = async body => {
   const idx = body.indexOf('__DATA__ = "');
@@ -90,6 +89,7 @@ let getData = async body => {
       bookArr.push(boolItem);
     }
   }
+  // 先存储没有摘要信息的数据
   const data = await writeFilePromise(
     "7-doubanArr1.js",
     JSON.stringify(bookArr, null, " "),
@@ -99,7 +99,7 @@ let getData = async body => {
 const getAbstract = async () => {
   console.log("urlArr.length", urlArr.length);
   for (i = 0; i < urlArr.length; i += 5) {
-    console.log("for (i = 0;+++", i);
+    console.log("开始循环回去详情页，摘要", i);
     try {
       const promiseAll = Promise.all([
         await httpsGet(urlArr[i]),
@@ -129,6 +129,8 @@ const getAbstract = async () => {
         "utf-8"
       );
     }
+    // 间隔30秒后再执行，防止被封
+    await sleep(30);
   }
 };
 let analyticalSummary = async (bookHtml, index) => {
@@ -149,15 +151,30 @@ let analyticalSummary = async (bookHtml, index) => {
       abstract += des;
     });
   }
+  // 获取到摘要后把再要加进数据，再存储
   bookArr[index].abstract = abstract;
   const data = await writeFilePromise(
     "7-doubanArr1.js",
     JSON.stringify(bookArr, null, " "),
     "utf-8"
   );
+  // 保存csv文件
+  jsonToCsv(bookArr, ".", "douban.csv");
+};
+// 封装setTimeout Promise
+let sleep = sec => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => resolve(), sec * 1000);
+  });
 };
 const req = async () => {
-  await doubanPage(1);
-  await getAbstract();
+  for (let i = 0; i < 10; i += 5) {
+    console.log(i, "+++++++++++++");
+    await doubanPage(i);
+    await getAbstract();
+    // 间隔60秒后再执行，防止被封
+    await sleep(60);
+  }
 };
+
 req();
