@@ -39,3 +39,13 @@ create table if not exists doubanBooks (
 ) engine=InnoDB default charset=utf8;
 -- 插入数据
 insert into doubanBooks (title,evaluateNumber,evaluatestar,cover_url,author,press,pubDate,abstract) value ("1212",4.5,9,'http://img','ssss','ssss','2018-08','sssds');
+
+-- 创建用户表
+create table if not exists users (
+  id int auto_increment,
+  name varchar(40) not null,
+  age int not null,
+  password varchar(30) not null,
+  mailbox varchar(30) not null,
+  primary key (id)
+) engine=InnoDB default charset=utf8;

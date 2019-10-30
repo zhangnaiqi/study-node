@@ -20,3 +20,14 @@ content-type: application/json
     "a": 1,
     "b": 2.2
 }
+
+###
+POST http://127.0.0.1:8888/register
+content-type: application/json
+
+{
+    "name": "znq2",
+    "age": 26,
+    "password":"qaz12",
+    "mailbox":"10@qq.com"
+}
